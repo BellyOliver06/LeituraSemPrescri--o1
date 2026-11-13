@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leitura Sem Prescrição | Livros, caos e boas companhias</title>
+  <meta name="description" content="O encontro entre literatura, cultura pop e a vida real. Leia o que quiser. Os efeitos adversos são problema seu.">
+  <link rel="icon" type="image/jpeg" href="assets/img/logo-badge.jpg">
+
+  <!-- Google Fonts: League Spartan, DM Sans, Caveat, Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=League+Spartan:wght@700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+
+  <!-- CSS Principal -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Navegação -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo">
+        <img src="assets/img/logo-badge.jpg" alt="Logo Leitura Sem Prescrição" class="nav-logo-thumb">
+        <div class="brand-text">
+          <span class="title-main">Leitura</span>
+          <span class="title-hand">sem</span>
+          <span class="title-main">Prescrição</span>
+        </div>
+      </a>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#sobre" class="nav-link">O Projeto</a></li>
+        <li><a href="#criadora" class="nav-link">Quem sou eu</a></li>
+        <li><a href="#pilares" class="nav-link">Bula Literária</a></li>
+        <li><a href="#receituario" class="nav-link">Gerador Rx</a></li>
+        <li><a href="#redes" class="nav-link">Perfis & Redes</a></li>
+        <li><a href="https://www.instagram.com/leiturasemprescricao" target="_blank" rel="noopener" class="nav-cta">@leiturasemprescricao</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Banner Fita Ticker -->
+  <div class="ticker-banner">
+    <div class="ticker-track">
+      <div class="ticker-item"><span>LIVROS</span><span class="ticker-dot"></span><span>SÉRIES</span><span class="ticker-dot"></span><span>ANIMES</span><span class="ticker-dot"></span><span>GAMES</span><span class="ticker-dot"></span><span>VIDA REAL</span><span class="ticker-dot"></span><span>E TUDO MAIS QUE DER VONTADE</span><span class="ticker-dot"></span></div>
+      <div class="ticker-item"><span>LIVROS</span><span class="ticker-dot"></span><span>SÉRIES</span><span class="ticker-dot"></span><span>ANIMES</span><span class="ticker-dot"></span><span>GAMES</span><span class="ticker-dot"></span><span>VIDA REAL</span><span class="ticker-dot"></span><span>E TUDO MAIS QUE DER VONTADE</span><span class="ticker-dot"></span></div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-tag">
+          <span class="doodle-crown">👑</span>
+          <span>Identidade Editorial & Alternativa</span>
+        </div>
+        <h1 class="hero-title">
+          Livros, caos & <br>boas <span class="text-yellow">companhias.</span>
+        </h1>
+        <p class="hero-subtitle">
+          O encontro sem filtros entre literatura, cultura pop e vida real. Resenhas sinceras, surtos literários, indicações e opiniões de quem lê por pura paixão.
+        </p>
+
+        <!-- Bilhete rasgado adesivo -->
+        <div class="torn-paper-note">
+          "Leia o que quiser. <br>
+          Os efeitos adversos são problema seu." 
+          <span class="note-heart">♡</span>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#redes" class="btn-primary">
+            <span>Acompanhar nas Redes</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#sobre" class="btn-secondary">
+            <span>Conhecer o Manifesto</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-badge-wrap">
+          <img src="assets/img/logo-badge.jpg" alt="Selo Oficial Leitura Sem Prescrição" class="hero-main-img">
+          
+          <div class="float-tag tag-top-right">
+            <span>💊</span>
+            <span>Sem Regras Nem Receita</span>
+          </div>
+
+          <div class="float-tag tag-bottom-left">
+            <span>✨</span>
+            <span>Aqui não tem julgamento</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Seção Sobre o Projeto / Conceito da Marca -->
+  <section class="section section-darker" id="sobre">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">♡ Conceito & Propósito</span>
+        <h2 class="section-title">O Que É O Leitura Sem Prescrição?</h2>
+      </div>
+
+      <div class="manifesto-cards">
+        <div class="manifesto-card">
+          <div class="manifesto-icon">📚</div>
+          <h3>Liberdade Literária</h3>
+          <p>
+            É sobre ler o que quiser, quando quiser e do jeito que quiser. Aqui não tem imposição de "só clássicos" nem filtro de superioridade intelectual.
+          </p>
+          <span class="card-stamp">sem regras</span>
+        </div>
+
+        <div class="manifesto-card">
+          <div class="manifesto-icon">💬</div>
+          <h3>Sinceridade & Opinião</h3>
+          <p>
+            Rir do caos, falar o que pensa e transformar as resenhas em uma conversa entre amigos na cafeteria. Opiniões sinceras e muita autenticidade.
+          </p>
+          <span class="card-stamp">zero filtro</span>
+        </div>
+
+        <div class="manifesto-card">
+          <div class="manifesto-icon">🎮</div>
+          <h3>Cultura Pop & Conexão</h3>
+          <p>
+            Livros se conectam com séries, animes, jogos e música. A literatura não vive isolada do mundo: ela é o combustível para as melhores discussões.
+          </p>
+          <span class="card-stamp">+ caos bom</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Quem Sou Eu (Apresentação Pessoal) -->
+  <section class="section" id="criadora">
+    <div class="container">
+      <div class="creator-wrapper">
+        <div class="creator-image-box">
+          <div class="polaroid-frame">
+            <img src="assets/img/logo-stamp.jpg" alt="Apresentação Criadora" class="polaroid-photo">
+            <div class="polaroid-caption">Isabelly • Futura Farmacêutica ♡</div>
+          </div>
+        </div>
+
+        <div class="creator-info">
+          <span class="creator-badge">POR TRÁS DAS PÁGINAS</span>
+          <h2>Oi, gente! <br>Eu sou a <span class="text-yellow">Isabelly</span>.</h2>
+          <p class="creator-bio-text">
+            Tenho 21 anos, sou estudante de <strong>Farmácia</strong> (daí a brincadeira com a "prescrição" e tarjas pretas!), apaixonada compulsiva por livros, animes, games, rock e tudo o que me faz rir ou surtar.
+          </p>
+          <p class="creator-bio-text">
+            Criei o <strong>Leitura Sem Prescrição</strong> para ser o nosso refúgio. Se você também é do tipo que lê por impulso, acumula 5 mil livros na estante sem ler metade e tem zero disciplina, você tá exatamente no lugar certo!
+          </p>
+
+          <div class="creator-traits">
+            <div class="trait-item">
+              <span class="text-yellow">✦</span>
+              <span>Futura Farmacêutica & Booklover</span>
+            </div>
+            <div class="trait-item">
+              <span class="text-yellow">✦</span>
+              <span>Fã de Rock, Games & Animes</span>
+            </div>
+            <div class="trait-item">
+              <span class="text-yellow">✦</span>
+              <span>"Só mais um capítulo..." (às 3h da manhã)</span>
+            </div>
+            <div class="trait-item">
+              <span class="text-yellow">✦</span>
+              <span>Apego a romances duvidosos</span>
+            </div>
+          </div>
+
+          <a href="#receituario" class="btn-primary">
+            <span>Pegar Minha Indicação do Dia</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Bula Literária / O Que Você Vai Encontrar -->
+  <section class="section section-darker" id="pilares">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">📋 Bula do Projeto</span>
+        <h2 class="section-title">O Que Você Vai Ver Por Aqui</h2>
+      </div>
+
+      <div class="pills-grid">
+        <div class="pillar-card">
+          <div class="pillar-number">01</div>
+          <h4>Resenhas Sinceras</h4>
+          <p>Opiniões reais sobre o que funcionou, o que decepcionou e o que vale cada centavo.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-number">02</div>
+          <h4>Leitura Contraindicada</h4>
+          <p>Livros que deveriam vir com tarja preta e romances problemáticos que a gente ama julgar.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-number">03</div>
+          <h4>Cultura Pop & Geek</h4>
+          <p>Séries, animes, jogos e comparações de adaptações com discussões descontraídas.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-number">04</div>
+          <h4>Surtos & Vida Real</h4>
+          <p>Memes de leitor, ressaca literária, rotina e o caos de comprar mais livros do que dá tempo de ler.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gerador Interativo: Receituário Sem Prescrição -->
+  <section class="section" id="receituario">
+    <div class="container">
+      <div class="generator-box">
+        <div class="generator-content">
+          <span class="doodle-crown">💊</span>
+          <h3>Receituário Literário Interativo</h3>
+          <p class="generator-desc">
+            Qual é o seu sintoma hoje? Escolha o seu estado emocional e receba uma prescrição sem garantia de equilíbrio mental:
+          </p>
+
+          <div class="mood-selector">
+            <button class="mood-btn" data-mood="ressaca">💤 Ressaca Literária</button>
+            <button class="mood-btn" data-mood="surtar">😱 Quero um Plot Twist Cruel</button>
+            <button class="mood-btn" data-mood="conforto">☕ Conforto & Dopamina</button>
+            <button class="mood-btn" data-mood="problema">🚩 Romance Questionável</button>
+            <button class="mood-btn" data-mood="geek">⚔️ Fantasia & Nerdice</button>
+          </div>
+
+          <div class="prescription-result" id="rxResult">
+            <div class="prescription-header">
+              <span>LEITURA SEM PRESCRIÇÃO • CRM LITERÁRIO #001</span>
+              <span>USO IMEDIATO</span>
+            </div>
+            <div class="prescription-body">
+              <h4 id="rxTitle">Título do Diagnóstico</h4>
+              <span class="rx-tag" id="rxTag">Dose Recomendada</span>
+              <p id="rxDesc">Descrição do tipo de leitura ideal para o seu sintoma de hoje.</p>
+              <div class="prescription-warning" id="rxSideEffect">Aviso de bula: Efeitos colaterais imprevisíveis.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Redes Sociais & Hub Digital -->
+  <section class="section section-darker" id="redes">
+    <div class="container">
+      <div class="social-hub-box">
+        <div class="social-header-row">
+          <div class="ig-profile-header">
+            <img src="assets/img/logo-badge.jpg" alt="@leiturasemprescricao" class="ig-avatar">
+            <div class="ig-info">
+              <h3>@leiturasemprescricao <span class="ig-verified">★</span></h3>
+              <p>Livros, caos e boas companhias. ☕💊</p>
+            </div>
+          </div>
+
+          <a href="https://www.instagram.com/leiturasemprescricao" target="_blank" rel="noopener" class="btn-primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            <span>Seguir no Instagram</span>
+          </a>
+        </div>
+
+        <!-- Grade de Links Oficiais -->
+        <div class="links-grid">
+          <a href="https://www.instagram.com/leiturasemprescricao" target="_blank" rel="noopener" class="social-action-card">
+            <div class="social-card-left">
+              <span class="social-icon">📷</span>
+              <div>
+                <div class="social-card-name">Instagram</div>
+                <div class="social-card-sub">Resenhas, reels & stories diários</div>
+              </div>
+            </div>
+            <span>→</span>
+          </a>
+
+          <a href="https://www.tiktok.com/@leiturasemprescricao" target="_blank" rel="noopener" class="social-action-card">
+            <div class="social-card-left">
+              <span class="social-icon">🎬</span>
+              <div>
+                <div class="social-card-name">TikTok / BookTok</div>
+                <div class="social-card-sub">Vídeos curtos, reações e surtos</div>
+              </div>
+            </div>
+            <span>→</span>
+          </a>
+
+          <a href="#" class="social-action-card" id="shareBtn">
+            <div class="social-card-left">
+              <span class="social-icon">🔗</span>
+              <div>
+                <div class="social-card-name">Compartilhar Site</div>
+                <div class="social-card-sub">Copiar link do cartão de visitas</div>
+              </div>
+            </div>
+            <span>📋</span>
+          </a>
+
+          <a href="mailto:contato.leiturasemprescricao@gmail.com" class="social-action-card">
+            <div class="social-card-left">
+              <span class="social-icon">✉️</span>
+              <div>
+                <div class="social-card-name">Parcerias & Editoras</div>
+                <div class="social-card-sub">Contato profissional e marcas</div>
+              </div>
+            </div>
+            <span>→</span>
+          </a>
+        </div>
+
+        <!-- Slider de Destaques da Marca / Posts -->
+        <div class="carousel-container">
+          <div class="carousel-title-row">
+            <h4>Destaques do Feed & Quadros Especiais</h4>
+            <div class="carousel-controls">
+              <button class="carousel-btn" id="sliderPrev" aria-label="Anterior">←</button>
+              <button class="carousel-btn" id="sliderNext" aria-label="Próximo">→</button>
+            </div>
+          </div>
+
+          <div class="cards-slider" id="postSlider">
+            <div class="slide-item">
+              <span class="slide-tag">Quadro Oficial</span>
+              <h5>Bula do Livro</h5>
+              <p>Composição, posologia, reações adversas e advertências antes de abrir a primeira página.</p>
+              <div class="slide-footer">#BulaLiterária ♡</div>
+            </div>
+
+            <div class="slide-item">
+              <span class="slide-tag">Alerta Vermelho</span>
+              <h5>Leitura Contraindicada</h5>
+              <p>Livros que vão te desestabilizar emocionalmente, mas você não vai conseguir largar.</p>
+              <div class="slide-footer">#TarjaPreta ♡</div>
+            </div>
+
+            <div class="slide-item">
+              <span class="slide-tag">Madrugada</span>
+              <h5>"Só Mais Um Capítulo..."</h5>
+              <p>Disse eu às 3h da manhã com os olhos ardendo e o despertador quase tocando.</p>
+              <div class="slide-footer">#SurtosLiterários ♡</div>
+            </div>
+
+            <div class="slide-item">
+              <span class="slide-tag">Dilema Real</span>
+              <h5>5 Mil Livros Comprados</h5>
+              <p>E zero lidos. A arte de comprar livros como um hobby totalmente separado de ler livros.</p>
+              <div class="slide-footer">#TBRInfinita ♡</div>
+            </div>
+
+            <div class="slide-item">
+              <span class="slide-tag">Geek & Pop</span>
+              <h5>Multiverso Sem Regras</h5>
+              <p>Animes que dariam romances incríveis e games com narrativas que humilham best-sellers.</p>
+              <div class="slide-footer">#CulturaPop ♡</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h4>Leitura Sem Prescrição</h4>
+          <p>
+            O cartão de visitas e painel oficial da marca. Literatura livre de regras, julgamentos e prescrições.
+          </p>
+          <p class="font-hand text-yellow" style="font-size: 1.3rem;">
+            "Leia o que quiser. Os efeitos adversos são problema seu." ♡
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Navegação</h5>
+          <ul class="footer-links">
+            <li><a href="#sobre">Conceito do Projeto</a></li>
+            <li><a href="#criadora">Sobre a Isabelly</a></li>
+            <li><a href="#pilares">Bula Literária</a></li>
+            <li><a href="#receituario">Receituário Interativo</a></li>
+            <li><a href="#redes">Links & Redes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Universo LSP</h5>
+          <ul class="footer-links">
+            <li><a href="https://www.instagram.com/leiturasemprescricao" target="_blank" rel="noopener">Instagram Oficial</a></li>
+            <li><a href="https://www.tiktok.com/@leiturasemprescricao" target="_blank" rel="noopener">TikTok / Booktok</a></li>
+            <li><a href="mailto:contato.leiturasemprescricao@gmail.com">Contato Comercial</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Leitura Sem Prescrição. Todos os direitos reservados.</div>
+        <div>Desenvolvido com carinho para o projeto literário da Isabelly ✨</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast de Notificação -->
+  <div class="toast-notice" id="toastNotice">
+    ✓ Link copiado para a área de transferência!
+  </div>
+
+  <!-- Script JS Principal -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
