@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farmacopeia Literária | Leitura Sem Prescrição</title>
+  <meta name="description" content="Um catálogo de obras, experiências e efeitos adversos. Consulte antes de iniciar sua próxima leitura.">
+  <link rel="icon" type="image/jpeg" href="assets/img/logo-badge.jpg">
+
+  <!-- Fontes Oficiais -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=League+Spartan:wght@700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+
+  <!-- Estilos Gerais e Específicos -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/farmacopeia.css">
+</head>
+<body>
+
+  <!-- Navegação Superior -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/img/logo-badge.jpg" alt="Logo Leitura Sem Prescrição" class="nav-logo-thumb">
+        <div class="brand-text">
+          <span class="title-main">Leitura</span>
+          <span class="title-hand">sem</span>
+          <span class="title-main">Prescrição</span>
+        </div>
+      </a>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Início</a></li>
+        <li><a href="index.html#sobre" class="nav-link">O Projeto</a></li>
+        <li><a href="index.html#criadora" class="nav-link">Quem sou eu</a></li>
+        <li><a href="index.html#pilares" class="nav-link">Bula Literária</a></li>
+        <li><a href="index.html#receituario" class="nav-link">Receituário</a></li>
+        <li><a href="farmacopeia.html" class="nav-link nav-highlight">Farmacopeia</a></li>
+        <li><a href="index.html#redes" class="nav-link">Perfis & Redes</a></li>
+        <li><a href="https://www.instagram.com/leiturasemprescricao" target="_blank" rel="noopener" class="nav-cta">@leiturasemprescricao</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Barra de Retorno / Breadcrumb -->
+  <div class="container breadcrumb-bar">
+    <a href="index.html" class="btn-voltar">
+      <span>←</span>
+      <span>Voltar para a Página Inicial</span>
+    </a>
+  </div>
+
+  <!-- Cabeçalho Oficial da Farmacopeia -->
+  <header class="farmacopeia-header">
+    <div class="container header-inner">
+      <span class="badge-archive">
+        <span>💊</span>
+        <span>Arquivo Oficial de Fórmulas Literárias</span>
+      </span>
+      <h1 class="farmacopeia-title">FARMACOPEIA LITERÁRIA</h1>
+      <p class="farmacopeia-subtitle">
+        "Um catálogo de obras, experiências e efeitos adversos. Consulte antes de iniciar sua próxima leitura."
+      </p>
+      <p class="farmacopeia-desc">
+        Bem-vindo ao arquivo literário do LSP. Aqui, cada livro possui seu próprio histórico, suas indicações, contraindicações e possíveis efeitos colaterais. As avaliações são pessoais e as prescrições, inteiramente questionáveis.
+      </p>
+    </div>
+  </header>
+
+  <!-- Seção de Filtros e Pesquisa em Tempo Real -->
+  <section class="filters-section">
+    <div class="container">
+      <div class="filters-wrapper">
+        <!-- Campo de Pesquisa -->
+        <div class="search-box-row">
+          <div class="search-input-group">
+            <span class="search-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+            </span>
+            <input 
+              type="text" 
+              id="searchInput" 
+              class="search-input" 
+              placeholder="Pesquisar por título da obra ou autor..."
+              autocomplete="off"
+            >
+          </div>
+        </div>
+
+        <!-- Filtros Rápidos -->
+        <div class="filters-row">
+          <div class="filter-item">
+            <label for="filterGenero">Gênero Literário</label>
+            <select id="filterGenero" class="custom-select">
+              <option value="">Todos os Gêneros</option>
+            </select>
+          </div>
+
+          <div class="filter-item">
+            <label for="filterAvaliacao">Avaliação Mínima</label>
+            <select id="filterAvaliacao" class="custom-select">
+              <option value="">Todas as notas</option>
+              <option value="5">★★★★★ (5 estrelas)</option>
+              <option value="4">★★★★☆ (4+ estrelas)</option>
+              <option value="3">★★★☆☆ (3+ estrelas)</option>
+            </select>
+          </div>
+
+          <div class="filter-item">
+            <label for="filterClassificacao">Classificação Indicativa</label>
+            <select id="filterClassificacao" class="custom-select">
+              <option value="">Todas as idades</option>
+            </select>
+          </div>
+
+          <button type="button" id="btnLimparFiltros" class="btn-limpar">
+            <span>Limpar Filtros</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Barra de Resultados -->
+      <div class="catalog-status-bar">
+        <span class="results-counter" id="resultsCounter">Carregando acervo...</span>
+      </div>
+
+      <!-- Grade do Catálogo -->
+      <div class="catalog-grid" id="catalogGrid">
+        <!-- Cards inseridos dinamicamente pelo JavaScript -->
+      </div>
+
+      <!-- Estado Vazio / Sem Resultados -->
+      <div class="empty-state" id="emptyState" style="display: none;">
+        <div class="empty-icon">🧪</div>
+        <h3>Fórmula não encontrada!</h3>
+        <p>Não encontramos essa fórmula no nosso arquivo. Tente outra busca ou limpe os filtros para explorar outras obras!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal / Painel da Ficha Farmacêutica -->
+  <div class="ficha-modal" id="fichaModal" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="modalClose" aria-label="Fechar Ficha">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <div id="fichaContent">
+        <!-- Conteúdo detalhado injetado via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h4>Farmacopeia Literária</h4>
+          <p>
+            O repositório e arquivo oficial de obras, posologias e efeitos adversos do Leitura Sem Prescrição.
+          </p>
+          <p class="font-hand text-yellow" style="font-size: 1.3rem;">
+            "Leia o que quiser. Os efeitos adversos são problema seu." ♡
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Navegação</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Página Inicial</a></li>
+            <li><a href="farmacopeia.html">Catálogo Completo</a></li>
+            <li><a href="index.html#sobre">O Projeto</a></li>
+            <li><a href="index.html#criadora">Sobre a Isabelly</a></li>
+            <li><a href="index.html#receituario">Receituário Interativo</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Universo LSP</h5>
+          <ul class="footer-links">
+            <li><a href="https://www.instagram.com/leiturasemprescricao" target="_blank" rel="noopener">Instagram Oficial</a></li>
+            <li><a href="https://www.tiktok.com/@leiturasemprescricao" target="_blank" rel="noopener">TikTok / Booktok</a></li>
+            <li><a href="https://x.com/leiturasempresc" target="_blank" rel="noopener">X (Twitter) @leiturasempresc</a></li>
+            <li><a href="mailto:contato.leiturasemprescricao@gmail.com">Contato Comercial</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Leitura Sem Prescrição • Farmacopeia Literária Oficial.</div>
+        <div>Desenvolvido com carinho para o projeto da Isabelly ✨</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts: Banco de Dados de Livros e Lógica da Farmacopeia -->
+  <script src="assets/data/livros.js"></script>
+  <script src="assets/js/farmacopeia.js"></script>
+</body>
+</html>
