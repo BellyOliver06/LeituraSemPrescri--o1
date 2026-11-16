@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const filterGenero = document.getElementById('filterGenero');
   const filterAvaliacao = document.getElementById('filterAvaliacao');
   const filterClassificacao = document.getElementById('filterClassificacao');
+  const filterCarimbo = document.getElementById('filterCarimbo');
   const btnLimpar = document.getElementById('btnLimparFiltros');
   const catalogGrid = document.getElementById('catalogGrid');
   const emptyState = document.getElementById('emptyState');
@@ -80,7 +81,63 @@ document.addEventListener('DOMContentLoaded', () => {
     return `${html} <span class="star-score">${nota.toFixed(1)}/5</span>`;
   }
 
-  // 3. Renderizar Capa ou Placeholder Editorial com identidade do LSP
+  // 3. Renderizar Carimbo Editorial LSP (Prescrito, Uso com Cautela, Contraindicado)
+  function renderCarimbo(carimboTipo, tamanho = 'normal') {
+    if (!carimboTipo) return '';
+    const tipo = carimboTipo.toUpperCase().trim();
+    
+    let classeCss = '';
+    let textoPrincipal = '';
+    let textoComplementar = '';
+    let icone = '';
+
+    if (tipo === 'PRESCRITO') {
+      classeCss = 'carimbo-prescrito';
+      textoPrincipal = 'PRESCRITO';
+      textoComplementar = 'Vale a leitura!';
+      icone = '✓';
+    } else if (tipo === 'USO COM CAUTELA' || tipo === 'CAUTELA') {
+      classeCss = 'carimbo-cautela';
+      textoPrincipal = 'USO COM CAUTELA';
+      textoComplementar = 'Leia a bula!';
+      icone = '⚠️';
+    } else if (tipo === 'CONTRAINDICADO') {
+      classeCss = 'carimbo-contraindicado';
+      textoPrincipal = 'CONTRAINDICADO';
+      textoComplementar = 'Não recomendo!';
+      icone = '✕';
+    } else {
+      return '';
+    }
+
+    if (tamanho === 'card') {
+      return `
+        <div class="stamp-editorial stamp-card ${classeCss}" title="${textoPrincipal} — ${textoComplementar}">
+          <span class="stamp-icon">${icone}</span>
+          <div class="stamp-text-group">
+            <span class="stamp-main-text">${textoPrincipal}</span>
+            <span class="stamp-sub-text">${textoComplementar}</span>
+          </div>
+        </div>
+      `;
+    }
+
+    // Tamanho maior para ficha detalhada
+    return `
+      <div class="stamp-editorial stamp-ficha ${classeCss}">
+        <div class="stamp-inner-border">
+          <div class="stamp-header-row">
+            <span class="stamp-lsp-tag">LSP • PRONTUÁRIO EDITORIAL</span>
+            <span class="stamp-icon-large">${icone}</span>
+          </div>
+          <div class="stamp-main-text-large">${textoPrincipal}</div>
+          <div class="stamp-sub-text-large">"${textoComplementar}"</div>
+        </div>
+      </div>
+    `;
+  }
+
+  // 4. Renderizar Capa ou Placeholder Editorial com identidade do LSP
   function renderCapa(livro, extraClass = '') {
     if (livro.capa && livro.capa.trim() !== '') {
       return `<img src="${livro.capa}" alt="Capa de ${livro.titulo}" class="book-cover-img ${extraClass}" loading="lazy">`;
@@ -129,7 +186,10 @@ document.addEventListener('DOMContentLoaded', () => {
           ${livro.classificacaoIndicativa ? `<span class="badge-rating-age">${livro.classificacaoIndicativa}</span>` : ''}
         </div>
         <div class="book-card-body">
-          <div class="book-card-genres">${generosBadges}</div>
+          <div class="book-card-top-meta">
+            <div class="book-card-genres">${generosBadges}</div>
+            ${livro.carimbo ? renderCarimbo(livro.carimbo, 'card') : ''}
+          </div>
           <h3 class="book-card-title">${livro.titulo}</h3>
           <p class="book-card-author">Por <strong>${livro.autor}</strong></p>
           <div class="book-card-rating">${formatarEstrelas(livro.avaliacao)}</div>
@@ -159,6 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const genVal = filterGenero.value;
     const avalVal = filterAvaliacao.value ? parseFloat(filterAvaliacao.value) : null;
     const clasVal = filterClassificacao.value;
+    const carimboVal = filterCarimbo ? filterCarimbo.value : '';
 
     const filtrados = livros.filter(livro => {
       // Busca por título ou autor
@@ -178,7 +239,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const matchClassificacao = !clasVal || 
         (livro.classificacaoIndicativa && livro.classificacaoIndicativa === clasVal);
 
-      return matchBusca && matchGenero && matchAvaliacao && matchClassificacao;
+      // Filtro de carimbo editorial
+      const matchCarimbo = !carimboVal || 
+        (livro.carimbo && livro.carimbo.toUpperCase() === carimboVal.toUpperCase());
+
+      return matchBusca && matchGenero && matchAvaliacao && matchClassificacao && matchCarimbo;
     });
 
     renderizarCatalogo(filtrados);
@@ -189,12 +254,14 @@ document.addEventListener('DOMContentLoaded', () => {
   filterGenero.addEventListener('change', aplicarFiltros);
   filterAvaliacao.addEventListener('change', aplicarFiltros);
   filterClassificacao.addEventListener('change', aplicarFiltros);
+  if (filterCarimbo) filterCarimbo.addEventListener('change', aplicarFiltros);
 
   btnLimpar.addEventListener('click', () => {
     searchInput.value = '';
     filterGenero.value = '';
     filterAvaliacao.value = '';
     filterClassificacao.value = '';
+    if (filterCarimbo) filterCarimbo.value = '';
     aplicarFiltros();
   });
 
@@ -249,6 +316,82 @@ document.addEventListener('DOMContentLoaded', () => {
       posologiaHtml = partes.join('');
     }
 
+    // Construção da Seção "Efeitos Adversos" (Observados e Possíveis)
+    let efeitosAdversosHtml = '';
+    if (Array.isArray(livro.efeitosAdversos) && livro.efeitosAdversos.length > 0) {
+      const observados = livro.efeitosAdversos.filter(e => e.tipo === 'OBSERVADO');
+      const possiveis = livro.efeitosAdversos.filter(e => e.tipo === 'POSSÍVEL' || e.tipo === 'POSSIVEL');
+
+      let categoriasHtml = '';
+
+      if (observados.length > 0) {
+        const itensObs = observados.map(e => `
+          <div class="adverse-effect-card effect-observed">
+            <div class="effect-header-row">
+              <span class="effect-badge badge-observed">OBSERVADO</span>
+              <h5 class="effect-name">${e.nome}</h5>
+            </div>
+            <p class="effect-desc">${e.descricao}</p>
+          </div>
+        `).join('');
+
+        categoriasHtml += `
+          <div class="effects-subgroup">
+            <div class="effects-subgroup-title">
+              <span class="subgroup-dot dot-observed"></span>
+              <span>Reações Clínicas Vivenciadas (Efeitos Observados)</span>
+            </div>
+            <div class="effects-grid">${itensObs}</div>
+          </div>
+        `;
+      }
+
+      if (possiveis.length > 0) {
+        const itensPos = possiveis.map(e => `
+          <div class="adverse-effect-card effect-possible">
+            <div class="effect-header-row">
+              <span class="effect-badge badge-possible">POSSÍVEL</span>
+              <h5 class="effect-name">${e.nome}</h5>
+            </div>
+            <p class="effect-desc">${e.descricao}</p>
+          </div>
+        `).join('');
+
+        categoriasHtml += `
+          <div class="effects-subgroup">
+            <div class="effects-subgroup-title">
+              <span class="subgroup-dot dot-possible"></span>
+              <span>Reações Potenciais em Outros Leitores (Efeitos Possíveis)</span>
+            </div>
+            <div class="effects-grid">${itensPos}</div>
+          </div>
+        `;
+      }
+
+      // Observação clínica complementar, se houver
+      const obsClinicaHtml = livro.observacaoClinica ? `
+        <div class="effects-clinical-note font-hand">
+          <strong>Nota de Prontuário:</strong> "${livro.observacaoClinica}"
+        </div>
+      ` : '';
+
+      efeitosAdversosHtml = `
+        <div class="ficha-section-block block-efeitos-adversos">
+          <div class="ficha-block-header">
+            <span class="ficha-block-icon">⚡</span>
+            <h4>Efeitos Adversos Literários</h4>
+          </div>
+          <div class="ficha-block-content">
+            <p class="effects-intro-text">
+              Reações emocionais, comportamentais e cognitivas desencadeadas pelo contato com a substância literária. Consulte os registros antes de iniciar o tratamento:
+            </p>
+            ${categoriasHtml}
+            ${obsClinicaHtml}
+          </div>
+        </div>
+      `;
+    }
+
     // Montar HTML da Ficha Farmacêutica
     fichaContent.innerHTML = `
       <div class="ficha-document">
@@ -286,14 +429,19 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="ficha-title-block">
               <span class="ficha-subtitle-author">SUBSTÂNCIA:</span>
               <h2 class="ficha-book-title">${livro.titulo}</h2>
+              ${livro.subtitulo ? `<p class="ficha-book-subtitle font-hand">${livro.subtitulo}</p>` : ''}
               <p class="ficha-book-author">Autoria: <strong>${livro.autor}</strong></p>
             </div>
 
             <!-- Dados Técnicos (Ocultos se vazios) -->
             <div class="ficha-meta-grid">
-              ${renderCampoSeHouver('Origem', livro.nacional ? 'Nacional (Brasil)' : '')}
+              ${renderCampoSeHouver('Origem', livro.origem ? livro.origem : (livro.nacional ? 'Nacional (Brasil)' : ''))}
               ${renderCampoSeHouver('Editora', livro.editora)}
+              ${renderCampoSeHouver('Série / Volume', (livro.serie && livro.volume) ? `${livro.serie} (Vol. ${livro.volume})` : (livro.serie || ''))}
               ${renderCampoSeHouver('Ano de Publicação', livro.ano)}
+              ${renderCampoSeHouver('Data de Lançamento', livro.dataLancamento)}
+              ${renderCampoSeHouver('Número de Páginas', livro.paginas ? `${livro.paginas} páginas` : '')}
+              ${renderCampoSeHouver('ISBN', livro.isbn)}
               ${renderCampoSeHouver('Classificação Indicativa', livro.classificacaoIndicativa)}
               ${renderCampoSeHouver('Status de Leitura', livro.statusLeitura)}
             </div>
@@ -339,14 +487,20 @@ document.addEventListener('DOMContentLoaded', () => {
               </div>
             ` : ''}
 
-            <!-- Veredito -->
-            ${livro.veredito ? `
-              <div class="ficha-veredito-box">
-                <div class="veredito-badge">VEREDITO FINAL LSP</div>
-                <p class="font-hand veredito-text">"${livro.veredito}"</p>
-                <div class="veredito-signature">— Isabelly • Leitura Sem Prescrição ♡</div>
-              </div>
-            ` : ''}
+            <!-- Efeitos Adversos -->
+            ${efeitosAdversosHtml}
+
+            <!-- Veredito & Carimbo Oficial LSP -->
+            <div class="ficha-veredito-wrapper">
+              ${livro.carimbo ? renderCarimbo(livro.carimbo, 'ficha') : ''}
+              ${livro.veredito ? `
+                <div class="ficha-veredito-box">
+                  <div class="veredito-badge">VEREDITO FINAL LSP</div>
+                  <p class="font-hand veredito-text">"${livro.veredito}"</p>
+                  <div class="veredito-signature">— Isabelly • Leitura Sem Prescrição ♡</div>
+                </div>
+              ` : ''}
+            </div>
           </div>
         </div>
       </div>

@@ -381,11 +381,20 @@
   flex-grow: 1;
 }
 
+.book-card-top-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+}
+
 .book-card-genres {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-bottom: 0.8rem;
+  flex: 1 1 auto;
 }
 
 .badge-genero {
@@ -676,6 +685,13 @@
   box-shadow: 0 2px 6px rgba(217, 83, 79, 0.4);
 }
 
+.ficha-book-subtitle {
+  font-size: 1.35rem;
+  color: var(--color-green-deep);
+  margin: -2px 0 6px 0;
+  font-weight: 700;
+}
+
 .ficha-list-items {
   margin: 0;
   padding-left: 1.2rem;
@@ -835,7 +851,169 @@
   border-left: 5px solid var(--color-green-deep);
 }
 
-/* Veredito */
+/* ============================================================
+   SEÇÃO EFEITOS ADVERSOS LITERÁRIOS (ESTÉTICA DE BULA LSP)
+   ============================================================ */
+.block-efeitos-adversos {
+  border-left: 5px solid var(--color-lilac);
+  background: #fdfcf9;
+}
+
+.effects-intro-text {
+  font-size: 0.92rem !important;
+  color: #666 !important;
+  margin-bottom: 1.2rem !important;
+  font-style: italic;
+}
+
+.effects-subgroup {
+  margin-bottom: 1.5rem;
+}
+
+.effects-subgroup:last-child {
+  margin-bottom: 0.5rem;
+}
+
+.effects-subgroup-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-title);
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #171717;
+  margin-bottom: 0.8rem;
+  padding-bottom: 4px;
+  border-bottom: 1px dashed rgba(23, 23, 23, 0.15);
+}
+
+.subgroup-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-observed {
+  background: var(--color-green-deep);
+}
+
+.dot-possible {
+  background: var(--color-lilac);
+}
+
+.effects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.9rem;
+}
+
+.adverse-effect-card {
+  padding: 1rem;
+  border-radius: 8px;
+  border-width: 1px;
+  border-style: solid;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.adverse-effect-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Card: Efeito Observado (Verde escuro / Amarelo / Off-white) */
+.effect-observed {
+  background: #f4f8f6;
+  border-color: rgba(24, 60, 50, 0.25);
+  border-left: 3px solid var(--color-green-deep);
+}
+
+/* Card: Efeito Possível (Lilás / Neutro) */
+.effect-possible {
+  background: #f8f5fb;
+  border-color: rgba(185, 160, 210, 0.35);
+  border-left: 3px solid var(--color-lilac);
+}
+
+.effect-header-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 0.4rem;
+}
+
+.effect-badge {
+  font-family: var(--font-title);
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  text-transform: uppercase;
+}
+
+.badge-observed {
+  background: var(--color-green-deep);
+  color: var(--color-acid-yellow);
+}
+
+.badge-possible {
+  background: var(--color-lilac);
+  color: #171717;
+}
+
+.effect-name {
+  font-family: var(--font-title);
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: var(--color-green-deep);
+  line-height: 1.25;
+  margin: 0;
+}
+
+.effect-desc {
+  font-size: 0.88rem !important;
+  color: #3b3b3b !important;
+  line-height: 1.45 !important;
+  margin: 0 !important;
+}
+
+/* Nota Clínica de Prontuário */
+.effects-clinical-note {
+  margin-top: 1.2rem;
+  padding: 0.9rem 1.2rem;
+  background: rgba(231, 242, 26, 0.15);
+  border: 1px dashed var(--color-green-deep);
+  border-radius: 6px;
+  font-size: 1.15rem;
+  color: var(--color-green-deep);
+  line-height: 1.35;
+}
+
+.effects-clinical-note strong {
+  font-family: var(--font-title);
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 2px;
+  color: #171717;
+}
+
+/* Veredito & Carimbo */
+.ficha-veredito-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+
 .ficha-veredito-box {
   background: var(--color-green-deep);
   color: var(--color-offwhite);
@@ -869,6 +1047,165 @@
   color: rgba(243, 240, 231, 0.75);
   font-weight: 600;
   text-align: right;
+}
+
+/* ============================================================
+   SISTEMA DE CARIMBOS EDITORIAIS LSP (PRONTUÁRIO GRÁFICO)
+   ============================================================ */
+
+/* Carimbo Base */
+.stamp-editorial {
+  display: inline-flex;
+  user-select: none;
+  font-family: var(--font-title);
+  text-transform: uppercase;
+  border-style: solid;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+/* 1. Variante Card (Discreto, legível e estilizado) */
+.stamp-card {
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  border-width: 1.5px;
+  border-radius: 4px;
+  transform: rotate(-1.5deg);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+.stamp-card:hover {
+  transform: rotate(0deg) scale(1.04);
+}
+
+.stamp-card .stamp-icon {
+  font-size: 0.75rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.stamp-card .stamp-text-group {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+
+.stamp-card .stamp-main-text {
+  font-weight: 900;
+  letter-spacing: 0.6px;
+}
+
+.stamp-card .stamp-sub-text {
+  font-family: var(--font-hand);
+  text-transform: none;
+  font-size: 0.8rem;
+  letter-spacing: 0;
+  margin-top: -1px;
+}
+
+/* 2. Variante Ficha Detalhada (Carimbo de Prontuário Manuscrito/Oficial) */
+.stamp-ficha {
+  padding: 10px 18px;
+  border-width: 3px;
+  border-radius: 6px;
+  transform: rotate(-2deg);
+  box-shadow: 2px 3px 0 rgba(0, 0, 0, 0.25);
+  align-self: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.stamp-ficha .stamp-inner-border {
+  border-width: 1px;
+  border-style: dashed;
+  padding: 6px 14px;
+  border-radius: 3px;
+}
+
+.stamp-ficha .stamp-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  opacity: 0.85;
+  margin-bottom: 2px;
+}
+
+.stamp-ficha .stamp-icon-large {
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+.stamp-ficha .stamp-main-text-large {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  line-height: 1.1;
+}
+
+.stamp-ficha .stamp-sub-text-large {
+  font-family: var(--font-hand);
+  text-transform: none;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-top: 2px;
+}
+
+/* ==========================================
+   CORES & IDENTIDADE DE CADA CLASSIFICAÇÃO
+   ========================================== */
+
+/* PRESCRITO: Verde Escuro predominante, texto em Amarelo Ácido / Off-white */
+.carimbo-prescrito {
+  background: var(--color-green-deep);
+  border-color: var(--color-acid-yellow);
+  color: var(--color-acid-yellow);
+}
+
+.stamp-ficha.carimbo-prescrito .stamp-inner-border {
+  border-color: rgba(231, 242, 26, 0.6);
+}
+
+.stamp-ficha.carimbo-prescrito .stamp-sub-text-large {
+  color: var(--color-offwhite);
+}
+
+/* USO COM CAUTELA: Amarelo Ácido predominante, texto Preto */
+.carimbo-cautela {
+  background: var(--color-acid-yellow);
+  border-color: #171717;
+  color: #171717;
+}
+
+.stamp-ficha.carimbo-cautela .stamp-inner-border {
+  border-color: rgba(23, 23, 23, 0.5);
+}
+
+.stamp-ficha.carimbo-cautela .stamp-sub-text-large {
+  color: #171717;
+}
+
+/* CONTRAINDICADO: Preto predominante, texto em Amarelo Ácido */
+.carimbo-contraindicado {
+  background: #171717;
+  border-color: var(--color-acid-yellow);
+  color: var(--color-acid-yellow);
+}
+
+.stamp-ficha.carimbo-contraindicado .stamp-inner-border {
+  border-color: rgba(231, 242, 26, 0.5);
+}
+
+.stamp-ficha.carimbo-contraindicado .stamp-sub-text-large {
+  color: #ff6b6b;
 }
 
 /* Responsividade da Farmacopeia */
