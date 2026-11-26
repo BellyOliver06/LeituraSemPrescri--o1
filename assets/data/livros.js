@@ -1,5 +1,96 @@
 window.LSP_FARMACOPEIA_LIVROS = [
   {
+    id: "alchemised",
+    titulo: "Alchemised",
+    autor: "SenLinYu",
+    origem: "Estados Unidos",
+    nacional: false,
+    capa: "assets/img/alchemised.jpg",
+    carimbo: "PRESCRITO",
+    generos: [
+      "Fantasia",
+      "Dark Fantasy",
+      "Romance",
+      "Ficção Distópica"
+    ],
+    avaliacao: 5,
+    chamada: "Um monumento de fantasia sombria e guerra com personagens inesquecíveis, alquimia fascinante e um final que cura a alma.",
+    editora: "Editora Intrínseca",
+    ano: "2025",
+    classificacaoIndicativa: "18+",
+    statusLeitura: "Leitura concluída (Favoritado)",
+    composicao: {
+      sinopse: "Em um mundo destruído pela guerra, Helena Marino acorda sem as próprias memórias, prisioneira e submetida a procedimentos nada agradáveis. Antes uma alquimista poderosa, agora ela precisa lidar com um passado que não consegue lembrar e com um presente que parece cada vez mais difícil de compreender.\n\nSua vida está nas mãos de Kaine Ferron, um homem ligado ao regime responsável por sua captura e que parece saber muito mais sobre ela do que deixa transparecer. Enquanto Helena tenta recuperar suas lembranças, fragmentos de uma história muito maior começam a surgir, revelando acontecimentos que antecederam a guerra e as relações que ajudaram a moldar aquele mundo.\n\nEntre alquimia, magia, disputas políticas, experimentos humanos e uma guerra que deixou marcas profundas, a narrativa conduz o leitor por diferentes momentos da história, conectando peças de um passado cheio de segredos.\n\nMas, em meio a tantas lembranças perdidas, escolhas difíceis e verdades que vêm à tona, uma coisa fica cada vez mais evidente: o passado de Helena está longe de ser tão simples quanto parece.",
+      caracteristicas: "Construção de mundo complexa, sistema de alquimia e magia elaborado, intriga política, guerra pós-apocalíptica e romance entrelaçado com segredos de estado."
+    },
+    indicacoes: [
+      "Leitores que já possuem familiaridade com fantasia e apreciam universos complexos, sistemas de magia elaborados, conflitos políticos, guerras e narrativas densas."
+    ],
+    contraindicacoes: [
+      {
+        grupo: "Orientação de Público",
+        itens: ["Não é a melhor indicação para leitores iniciantes no gênero ou com pouca experiência em fantasia. A quantidade de informações, a complexidade do universo e a construção política exigem atenção e certa familiaridade com esse tipo de narrativa."]
+      },
+      {
+        grupo: "Violência de guerra e tortura",
+        itens: ["Violência explícita em contexto de conflito", "Tortura médica", "Experimentação humana"]
+      },
+      {
+        grupo: "Violência sexual e abuso",
+        itens: ["Agressão sexual", "Estupro", "Abuso religioso"]
+      },
+      {
+        grupo: "Saúde mental e trauma",
+        itens: ["Trauma complexo", "Ideação suicida", "Automutilação"]
+      },
+      {
+        grupo: "Outros temas sensíveis",
+        itens: ["Eugenia", "Canibalismo"]
+      }
+    ],
+    posologia: {
+      opiniao: "Eu sinceramente não sei nem por onde começar a falar desse livro. Fazia tempo que uma fantasia não me deixava tão completamente obcecada por um universo. Alchemised foi uma experiência que me fez rir, chorar, passar raiva, criar esperança e, principalmente, perder completamente a capacidade de pensar em qualquer outra coisa.\n\nA história me conquistou por inteiro. A construção política é muito bem feita, a guerra é de tirar o fôlego e o sistema de magia, apesar de bastante complexo, é fascinante. Inclusive, precisei recorrer ao glossário do livro algumas vezes para entender o que estava acontecendo, mas, depois que peguei o jeito, foi só ladeira abaixo. No melhor sentido possível.\n\nA narrativa começa no pós-guerra e depois nos leva de volta ao passado, construindo aos poucos as peças desse quebra-cabeça. E que quebra-cabeça, viu? Acontece tanta coisa, tão rápido, que às vezes eu mal tinha terminado de processar uma informação e já estava acontecendo outra desgraça. É tiro, porrada e bomba. E eu? Absolutamente entretida.\n\nMas preciso falar da Helena Marino. Que mulher! Inteligente, sagaz, determinada, corajosa e com uma audácia que eu sinceramente gostaria de ter. Ela foi, sem dúvidas, um dos maiores destaques da leitura para mim. E o Kaine Ferron… meu Deus, o Kaine. A obsessão, o cuidado, a disposição de morrer por ela e até a necessidade de fingir frieza quando, na verdade, se importava muito mais do que podia demonstrar. O famoso vilão do meu coração. Estou completamente rendida por esses dois e não pretendo buscar tratamento.\n\nO romance também me conquistou, mas o conjunto da obra é o que faz tudo funcionar tão bem. A escrita é densa, cheia de informações e detalhes, mas também é fluida e consegue prender desde o começo. Só deixo um aviso: se você não tem muita familiaridade com fantasia, talvez essa não seja a melhor porta de entrada. O universo é complexo, exige atenção e pode dar um nó na cabeça até você entender como tudo funciona.\n\nE sobre o final… eu gostei MUITO. Principalmente por não terminar simplesmente deixando a gente no meio do caos, mas mostrando o que aconteceu anos depois e permitindo que os personagens finalmente encontrassem um pouco de paz longe de toda aquela guerra. Depois de tudo que essas criaturas passaram, eu precisava desse momento de tranquilidade quase tanto quanto elas.\n\nLi esse monumento em aproximadamente uma semana e terminei completamente destruída. Favoritado, obviamente. Se eu pudesse apagar minha memória e ler tudo de novo pela primeira vez, faria isso sem pensar duas vezes.\n\nEnfim, Alchemised entrou para a lista das experiências mais marcantes da minha vida de leitora. Quero recomendar para todo mundo, quero falar sobre ele por horas e, se possível, quero guardar esse livro num cofre para que ninguém mais encoste. PRESCRITO, com direito a receita, carimbo e retorno obrigatório para discutir o final."
+    },
+    efeitosAdversos: [
+      {
+        tipo: "OBSERVADO",
+        nome: "01. Obsessão literária aguda",
+        descricao: "Desenvolvimento de fascínio intenso pelo universo da obra, acompanhado de pensamentos recorrentes e desejo persistente de permanecer naquele mundo mesmo após o encerramento da leitura. Pode provocar dificuldade de concentração em assuntos que não envolvam a narrativa."
+      },
+      {
+        tipo: "OBSERVADO",
+        nome: "02. Compulsão de leitura prolongada",
+        descricao: "Necessidade quase incontrolável de avançar continuamente pela narrativa, resultando na conclusão de um volume extenso em aproximadamente uma semana. Outras atividades podem sofrer adiamento até que a próxima página seja devidamente consultada."
+      },
+      {
+        tipo: "OBSERVADO",
+        nome: "03. Devastação pós-narrativa",
+        descricao: "Sensação de desorientação emocional após o encerramento da obra, acompanhada de dificuldade para assimilar que a experiência chegou ao fim. Pode provocar questionamentos sobre como retornar à vida cotidiana após acontecimentos de tamanha magnitude."
+      },
+      {
+        tipo: "OBSERVADO",
+        nome: "04. Síndrome da primeira leitura perdida",
+        descricao: "Desejo intenso de apagar a memória da experiência para redescobrir a história, reviver as surpresas e experimentar novamente todas as emoções pela primeira vez. O paciente reconhece a impossibilidade do procedimento, mas manifesta profundo interesse em realizá-lo."
+      },
+      {
+        tipo: "OBSERVADO",
+        nome: "05. Ressaca literária aguda",
+        descricao: "Dificuldade de iniciar ou se interessar por outras leituras após uma experiência excepcionalmente marcante. Pode provocar resistência a novas narrativas e sensação de que nenhum outro livro será capaz de oferecer estímulos equivalentes."
+      },
+      {
+        tipo: "OBSERVADO",
+        nome: "06. Panfletagem literária compulsiva",
+        descricao: "Necessidade urgente de conversar sobre a obra, compartilhar a experiência e convencer terceiros a realizar a leitura. Pode provocar discussões prolongadas, recomendações insistentes e tentativas recorrentes de recrutar novos leitores para o mesmo colapso emocional."
+      },
+      {
+        tipo: "OBSERVADO",
+        nome: "07. Fixação afetiva por personagens",
+        descricao: "Desenvolvimento de apego intenso por Helena e Kaine, acompanhado de pensamentos recorrentes sobre os personagens, sua relação e os acontecimentos que os envolveram. Pode provocar saudade precoce, dificuldade de desapego e resistência a aceitar que a convivência literária chegou ao fim. Quadro considerado permanente, sem previsão de recuperação."
+      }
+    ],
+    veredito: "Alchemised é um monumento literário. PRESCRITO, com direito a receita, carimbo e retorno obrigatório para discutir o final!"
+  },
+  {
     id: "binding-13",
     titulo: "Binding 13",
     subtitulo: "Marcação cerrada no amor",
@@ -78,11 +169,6 @@ window.LSP_FARMACOPEIA_LIVROS = [
       },
       {
         tipo: "OBSERVADO",
-        nome: "Reação de surpresa positiva",
-        descricao: "Expectativas inicialmente moderadas evoluem para uma experiência muito acima do esperado. Pode resultar em apego inesperado, recomendação entusiasmada e questionamentos sobre por que você não começou a leitura antes."
-      },
-      {
-        tipo: "OBSERVADO",
         nome: "Dependência de continuidade narrativa",
         descricao: "Necessidade imediata de permanecer no universo da obra, motivada tanto pelo apego aos personagens quanto pela curiosidade insuportável sobre os acontecimentos seguintes. A interrupção entre volumes pode ser considerada clinicamente inconveniente para a leitora."
       }
@@ -141,16 +227,6 @@ window.LSP_FARMACOPEIA_LIVROS = [
       },
       {
         tipo: "OBSERVADO",
-        nome: "Fascínio pela criatividade insana",
-        descricao: "Admiração pela capacidade da autora de conceber situações tão improváveis e absurdas. O paciente passa a questionar de onde vieram determinadas ideias e, simultaneamente, agradece por elas terem sido colocadas no papel."
-      },
-      {
-        tipo: "OBSERVADO",
-        nome: "Fluidez narrativa de alto potencial viciante",
-        descricao: "Facilidade de imersão provocada por uma escrita fluida, envolvente e de leitura rápida. Mesmo diante de acontecimentos questionáveis, o paciente permanece interessado e segue avançando pelas páginas."
-      },
-      {
-        tipo: "OBSERVADO",
         nome: "Fissura literária inexplicável",
         descricao: "Desenvolvimento de apego intenso por uma obra que desafia os padrões convencionais de qualidade, bom senso e dignidade literária. A parte mais estranha e incompreendida do paciente encontra ali seu habitat natural."
       },
@@ -165,7 +241,6 @@ window.LSP_FARMACOPEIA_LIVROS = [
         descricao: "Permanência da obra no centro das atenções e dos assuntos do paciente mesmo após a leitura. Pode transformar alguns dias comuns em um período histórico marcado por referências, recomendações e lembranças completamente fora da curva."
       }
     ],
-    observacaoClinica: "Paciente desenvolveu tamanha identificação com a obra que passou a ser reconhecida no clube do livro como a responsável pela disseminação da palavra do dinossauro de dois paus.",
     veredito: "Uma leitura que abraça o absurdo e não tem medo de exagerar. O humor e a criatividade da autora garantem momentos divertidos, mesmo que a experiência não tenha sido perfeita."
   }
 ];

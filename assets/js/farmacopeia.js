@@ -286,7 +286,13 @@ document.addEventListener('DOMContentLoaded', () => {
       let corpoHtml = '';
       if (Array.isArray(conteudo)) {
         if (conteudo.length === 0) return '';
-        corpoHtml = `<ul class="ficha-list-items">${conteudo.map(item => `<li>${item}</li>`).join('')}</ul>`;
+        // Suporte para itens de lista simples ou grupos de tópicos com subtítulo
+        corpoHtml = `<ul class="ficha-list-items">${conteudo.map(item => {
+          if (typeof item === 'object' && item !== null && item.grupo) {
+            return `<li><strong>${item.grupo}:</strong> ${Array.isArray(item.itens) ? item.itens.join(', ') : item.itens}</li>`;
+          }
+          return `<li>${item}</li>`;
+        }).join('')}</ul>`;
       } else if (typeof conteudo === 'string') {
         if (conteudo.trim() === '') return '';
         corpoHtml = `<p>${conteudo.replace(/\n\n/g, '</p><p>')}</p>`;
